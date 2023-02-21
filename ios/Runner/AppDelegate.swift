@@ -6,13 +6,12 @@ import flutter_callkit_incoming
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate, PKPushRegistryDelegate {
     
-    func pushRegistry(_ registry: PKPushRegistry, didUpdate pushCredentials: PKPushCredentials, for type: PKPushType) {
-        print(pushCredentials.token)
-        let deviceToken = pushCredentials.token.map { String(format: "%02x", $0) }.joined()
-        print(deviceToken)
-        
+    func pushRegistry(_ registry: PKPushRegistry, didUpdate credentials: PKPushCredentials, for type: PKPushType) {
+        print(credentials.token)
+        let deviceToken = credentials.token.map { String(format: "%02x", $0) }.joined()
         //Save deviceToken to your server
         SwiftFlutterCallkitIncomingPlugin.sharedInstance?.setDevicePushTokenVoIP(deviceToken)
+        print(deviceToken)
     }
     
     func pushRegistry(_ registry: PKPushRegistry, didInvalidatePushTokenFor type: PKPushType) {
@@ -25,9 +24,9 @@ import flutter_callkit_incoming
         print("didReceiveIncomingPushWith")
         guard type == .voIP else { return }
         
-        let id = payload.dictionaryPayload["id"] as? String ?? ""
-        let nameCaller = payload.dictionaryPayload["nameCaller"] as? String ?? ""
-        let handle = payload.dictionaryPayload["handle"] as? String ?? ""
+        let id = payload.dictionaryPayload["id"] as? String ?? "xxx"
+        let nameCaller = payload.dictionaryPayload["nameCaller"] as? String ?? "yyy"
+        let handle = payload.dictionaryPayload["handle"] as? String ?? "zzz"
         let isVideo = payload.dictionaryPayload["isVideo"] as? Bool ?? false
         
         let data = flutter_callkit_incoming.Data(id: id, nameCaller: nameCaller, handle: handle, type: isVideo ? 1 : 0)
