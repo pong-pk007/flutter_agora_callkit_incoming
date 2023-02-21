@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1032303647418",
+    "project_id": "metamedth-e949f",
+    "storage_bucket": "metamedth-e949f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032303647418:android:da1fb705a8f138cce80083",
+        "android_client_info": {
+          "package_name": "com.example.flutter_agora_example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032303647418-rl3lj3qceds7v4j3lvtibak884ipmrer.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgSuDINL2futnajCZ9WcjtLUGv5L1XPG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032303647418-rl3lj3qceds7v4j3lvtibak884ipmrer.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1032303647418-6hsj3lrdrd4amss48lamiqh8pcnodk5i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.appisp.flutterAgoraExample"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
